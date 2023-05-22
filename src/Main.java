@@ -10,23 +10,32 @@ public class Main {
         library.addBook(book2);
         library.addBook(book3);
         //Print the library
-//        System.out.println(library);
+        System.out.println(library);
         //Get books by year
-//        System.out.println(library.getBookByYear(2023));
+        System.out.println(library.getBookByYear(2023));
         //Get books by author
-//        System.out.println(library.getBookByAuthor("Jacob"));
+        System.out.println(library.getBookByAuthor("Jacob"));
         //Get book with the most pages
-//        System.out.println(library.getBookWithMostPages());
+        System.out.println(library.getBookWithMostPages());
         //Get books with more than X pages
-//        System.out.println(library.getBooksWithPages(200));
+        System.out.println(library.getBooksWithPages(200));
         //Get titles in alphabetical order
-//        System.out.println(library.getAlphabeticalBookList());
+        System.out.println(library.getAlphabeticalBookList());
         //Get books by category
-//        System.out.println(library.getBooksByCategory("Non-Fiction"));
+        System.out.println(library.getBooksByCategory("Non-Fiction"));
         //Check to see if book is onLoan
-//        System.out.println(library);
-//        System.out.println(library);
+        System.out.println(library);
         //System to monitor checked out books
-
+        //Make user
+        User randal = new User("Randal");
+        //Register user
+        library.registerUser(randal);
+        //Check out a book
+        randal.checkOutBook(book);
+        System.out.println(randal);
+        //How many days has this book been out
+        book.setDaysOut(20);
+        //Calculate late fees
+        System.out.println(library.calculateLateFees(randal));
     }
 }

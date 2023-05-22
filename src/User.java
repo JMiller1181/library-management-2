@@ -2,15 +2,21 @@ import java.util.ArrayList;
 
 public class User {
     private String name;
-    private int libraryID;
+    private int libraryCardNumber;
     private ArrayList<Book> checkedOutBooks;
+    private int lateFeeRate;
     public User (String name){
         this.name = name;
         checkedOutBooks = new ArrayList<>();
+        this.lateFeeRate = 3;
     }
 
     public void setLibraryID(int libraryID) {
-        this.libraryID = libraryID;
+        this.libraryCardNumber = libraryID;
+    }
+
+    public int getLibraryCardNumber() {
+        return libraryCardNumber;
     }
 
     public String getName(){
@@ -23,5 +29,22 @@ public class User {
     public void returnBook(Book book){
         book.setOffLoan();
         checkedOutBooks.remove(book);
+    }
+
+    public void setLateFeeRate(int lateFeeRate) {
+        this.lateFeeRate = lateFeeRate;
+    }
+
+    public int getLateFee(){
+        return lateFeeRate;
+    }
+    public ArrayList<Book> getCheckedOutBooks() {
+        return checkedOutBooks;
+    }
+
+    public String toString(){
+        return "User name: " + name + "\n"
+                + "User ID: " + libraryCardNumber + "\n"
+                + "Books checked out: " + checkedOutBooks;
     }
 }

@@ -5,6 +5,7 @@ public class Book {
     private int pages;
     private String category;
     private boolean isOnLoan;
+    private int daysOut;
     public Book (String title, String author, int publicationYear, int pages, String category){
         this.publicationYear = publicationYear;
         this.pages = pages;
@@ -12,6 +13,7 @@ public class Book {
         this.title = title;
         this.category = category;
         this.isOnLoan = false;
+        this.daysOut = 0;
     }
 
     public String getCategory(){
@@ -42,6 +44,14 @@ public class Book {
     public void setOffLoan(){
         isOnLoan = false;
     }
+    public void setDaysOut(int days){
+        daysOut = days;
+    }
+
+    public int getDaysOut() {
+        return daysOut;
+    }
+
     @Override
     public String toString() {
         return "Title: " + title + "\n" +
